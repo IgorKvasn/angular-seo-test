@@ -2,11 +2,11 @@
 var scotchApp = angular.module('scotchApp', ['ngRoute']);
 
 // configure our routes
-scotchApp.config(function($routeProvider) {
+scotchApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
 
         // route for the home page
-        .when('/', {
+        .when('/home', {
             templateUrl : 'pages/home.html',
             controller  : 'mainController'
         })
@@ -21,7 +21,13 @@ scotchApp.config(function($routeProvider) {
         .when('/contact', {
             templateUrl : 'pages/contact.html',
             controller  : 'contactController'
+        })
+        .otherwise({
+            redirectTo: '/home'
         });
+
+
+    $locationProvider.html5Mode(true);
 });
 
 // create the controller and inject Angular's $scope
