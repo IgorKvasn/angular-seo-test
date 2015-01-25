@@ -6,7 +6,7 @@ scotchApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
 
         // route for the home page
-        .when('/home', {
+        .when('/', {
             templateUrl : 'pages/home.html',
             controller  : 'mainController'
         })
@@ -23,7 +23,7 @@ scotchApp.config(function($routeProvider, $locationProvider) {
             controller  : 'contactController'
         })
         .otherwise({
-            redirectTo: '/home'
+            redirectTo: '/'
         });
 
 
